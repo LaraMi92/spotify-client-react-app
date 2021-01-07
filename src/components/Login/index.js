@@ -6,22 +6,25 @@ import { Input } from 'semantic-ui-react';
 import './login.scss';
 
 const Login = ({
-  accessToken, setAccessToken,
+  token, setAccessToken,
 }) => (
+  // only handling an input onChange event - no submit
   <Input
     className="login"
     icon="lock open"
     placeholder="Access token"
-    value={accessToken}
-    onChange={() => {
-      setAccessToken(accessToken);
+    value={token}
+    onChange={(event) => {
+      setAccessToken(event.target.value);
     }}
   />
+
 );
 
 Login.propTypes = {
-  accessToken: PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
   setAccessToken: PropTypes.func.isRequired,
+
 };
 
 export default Login;

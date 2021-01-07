@@ -6,23 +6,24 @@ import { Input, Form, Image } from 'semantic-ui-react';
 import logoSpotify from 'src/assets/logo_spotify.png';
 import './search.scss';
 
-const SearchBar = ({
-  searchValue, setSearchValue, placeholder,
-}) => (
+const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
   <>
     <Image centered size="medium" src={logoSpotify} />
     <Form
       className="search__form"
+      onSubmit={() => {
+        submitInput();
+      }}
     >
-      {/* Champ controlé classique, mais avec un <Input> de semantic ui */}
       <Input
         fluid
         icon="search"
-        placeholder={placeholder}
+        placeholder="placeholder"
         value={searchValue}
         onChange={(event) => {
-          setSearchValue(event.value);
+          setSearchValue(event.target.value);
         }}
+
       />
     </Form>
   </>
@@ -31,7 +32,7 @@ const SearchBar = ({
 SearchBar.propTypes = {
   searchValue: PropTypes.string.isRequired,
   setSearchValue: PropTypes.func.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  submitInput: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

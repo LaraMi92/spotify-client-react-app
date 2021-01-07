@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button } from 'semantic-ui-react';
 
-// un hook custom pour gérer l'audio
+// audio player custom hook
 const useAudio = (url) => {
   const [audio] = useState(new Audio(url));
   const [playing, setPlaying] = useState(false);
