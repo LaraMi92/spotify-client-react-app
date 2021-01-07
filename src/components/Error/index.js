@@ -9,8 +9,8 @@ const Error = ({ error }) => {
   if (error === '') {
     return null;
   } return (
-    <div className="app">
-      Sorry, we couldn't find any content.
+    <div className="app error">
+      <span>Oops, it seems like there was a problem.</span>
     </div>
   );
 };

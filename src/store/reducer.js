@@ -1,4 +1,6 @@
-import { LOGIN_TOKEN, UPDATE_VALUE, DISPATCH_RESULTS } from 'src/store/actions';
+import {
+  LOGIN_TOKEN, UPDATE_VALUE, DISPATCH_RESULTS, SHOW_ERROR,
+} from 'src/store/actions';
 
 const initialState = {
   items: {},
@@ -25,6 +27,12 @@ function reducer(oldState = initialState, action) {
       return {
         ...oldState,
         items: action.items,
+      };
+
+    case SHOW_ERROR:
+      return {
+        ...oldState,
+        error: 'error',
       };
     default:
       return { ...oldState };

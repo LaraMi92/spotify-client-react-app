@@ -19,8 +19,13 @@ const loadData = (store) => (next) => (action) => {
     // dispatch actions in case of results/failure
     axios(config)
       .then((response) => {
-        console.log(response.data);
-        store.dispatch(showResults(response.data));
+        console.log(response.data.tracks.items);
+        if (response.data.tracks.items.length === 0) {
+          store.dispatch(showError('There was no content found'));
+        }
+        else {
+          store.dispatch(showResults(response.data));
+        }
       })
       .catch((error) => {
         store.dispatch(showError(error));
