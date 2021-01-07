@@ -18,7 +18,7 @@ const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
       <Input
         fluid
         icon="search"
-        placeholder="placeholder"
+        placeholder="Search for a track"
         value={searchValue}
         onChange={(event) => {
           setSearchValue(event.target.value);
