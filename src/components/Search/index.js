@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Input, Form, Image } from 'semantic-ui-react';
+import { Input, Form } from 'semantic-ui-react';
 
-import logoSpotify from 'src/assets/logo_spotify.png';
 import './search.scss';
 
 const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
   <>
-    <Image centered size="medium" src={logoSpotify} />
+
     <Form
       className="search__form"
       onSubmit={() => {

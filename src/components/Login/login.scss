@@ -4,3 +4,10 @@
   right: 1rem;
   top: 1rem;
 }
+
+@media screen and (max-width: 428px){
+  .login {
+    width: 30%;
+    
+  }
+}

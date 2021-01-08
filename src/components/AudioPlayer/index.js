@@ -40,7 +40,7 @@ const AudioPlayer = ({ url }) => {
 };
 
 AudioPlayer.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 export default AudioPlayer;

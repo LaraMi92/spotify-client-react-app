@@ -3,3 +3,16 @@
   margin: 1rem auto;
   text-align: center;
 }
+
+.logo {
+  width: 70%;
+  padding: 1rem 0 1rem 0;
+}
+
+@media screen and (max-width: 428px){
+  .logo {
+    height: 20vh;
+    padding: 2rem 0 1rem 0
+  }
+}
+
