@@ -9,14 +9,12 @@ import Error from 'src/containers/Error';
 
 import 'semantic-ui-css/semantic.min.css';
 import './app.scss';
-import { Image } from 'semantic-ui-react';
 
 // == Composant
 const App = () => (
   <div className="app">
     <Login />
     <img src={logoSpotify} alt="spotify logo" className="logo" />
-
     <Search />
     <TrackResults />
     <Error />

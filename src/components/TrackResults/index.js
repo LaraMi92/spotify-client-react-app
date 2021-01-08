@@ -5,7 +5,8 @@ import { Card } from 'semantic-ui-react';
 import AudioPlayer from 'src/components/AudioPlayer';
 
 const TrackResults = ({ results }) => (
-  <Card.Group centered itemsPerRow={4}>
+
+  <Card.Group centered>
     {results?.tracks?.items.map((track) => (
       <Card
         key={track.id}
@@ -16,6 +17,7 @@ const TrackResults = ({ results }) => (
       />
     ))}
   </Card.Group>
+
 );
 
 TrackResults.propTypes = {
