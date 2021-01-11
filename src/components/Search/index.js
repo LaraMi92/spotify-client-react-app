@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Input, Form, Button } from 'semantic-ui-react';
+import { Icon, Form } from 'semantic-ui-react';
 
 import './search.scss';
 
@@ -14,15 +14,19 @@ const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
         submitInput();
       }}
     >
-      <Input
-        fluid
-        placeholder="Press Enter to search for a track"
-        value={searchValue}
-        onChange={(event) => {
-          setSearchValue(event.target.value);
-        }}
-      />
-
+      <div className="ui icon input">
+        <input
+          type="text"
+          placeholder="Search for a track"
+          value={searchValue}
+          onChange={(event) => {
+            setSearchValue(event.target.value);
+          }}
+        />
+        <button type="button" onClick={submitInput} className="ui icon button">
+          <Icon name="search" color="green" />
+        </button>
+      </div>
     </Form>
   </>
 );
