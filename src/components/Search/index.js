@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Input, Form } from 'semantic-ui-react';
+import { Input, Form, Button } from 'semantic-ui-react';
 
 import './search.scss';
 
@@ -16,14 +16,13 @@ const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
     >
       <Input
         fluid
-        icon="search"
-        placeholder="Search for a track"
+        placeholder="Press Enter to search for a track"
         value={searchValue}
         onChange={(event) => {
           setSearchValue(event.target.value);
         }}
-
       />
+
     </Form>
   </>
 );
