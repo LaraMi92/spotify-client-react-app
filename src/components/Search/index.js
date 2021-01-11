@@ -24,7 +24,7 @@ const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
           }}
         />
         <button type="button" onClick={submitInput} className="ui icon button">
-          <Icon name="search" color="green" />
+          <Icon name="search" color="green" onClick={submitInput} />
         </button>
       </div>
     </Form>
