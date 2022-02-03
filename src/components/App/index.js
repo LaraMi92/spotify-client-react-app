@@ -15,6 +15,8 @@ const App = () => (
   <div className="app">
     <Login />
     <img src={logoSpotify} alt="spotify logo" className="logo" />
+    <div className="text"> Get a token <a href="https://developer.spotify.com/console/get-search-item/" target="_blank">here </a>
+     and paste it above. You're all set to make a search and listen to music!</div>
     <Search />
     <TrackResults />
     <Error />

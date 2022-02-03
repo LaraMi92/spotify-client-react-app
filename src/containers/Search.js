@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   searchValue: state.searchValue,
+  token: state.token
 
 });
 

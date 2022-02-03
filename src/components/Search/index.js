@@ -1,18 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-
 import { Icon, Form } from 'semantic-ui-react';
-
 import './search.scss';
 
-const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
-  <>
+const SearchBar = ({ submitInput, setSearchValue, searchValue, token }) => {
+  
+  const [error, setError] = useState('');
 
+  const submit = (e) => {
+    e.preventDefault();
+    if(searchValue === ''){
+      setError('Please provide a value!');
+      return;
+    }
+    if(token === ''){
+      setError('Please provide a valid token!');
+      return;
+    } 
+    submitInput();
+  };
+
+  return(
+  <>
     <Form
       className="search__form"
-      onSubmit={() => {
-        submitInput();
-      }}
+      onSubmit={(e) => submit(e)}
     >
       <div className="ui icon input">
         <input
@@ -21,15 +33,17 @@ const SearchBar = ({ submitInput, setSearchValue, searchValue }) => (
           value={searchValue}
           onChange={(event) => {
             setSearchValue(event.target.value);
+            setError('');
           }}
         />
-        <button type="button" onClick={submitInput} className="ui icon button">
-          <Icon name="search" color="green" onClick={submitInput} />
+        <button type="submit" onClick={(e) => submit(e)} className="ui icon button">
+          <Icon name="search" color="green" />
         </button>
       </div>
     </Form>
+    {error !== '' && <div className="app error">{error}</div>}
   </>
-);
+  )};
 
 SearchBar.propTypes = {
   searchValue: PropTypes.string.isRequired,
